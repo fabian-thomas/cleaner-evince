@@ -1,5 +1,7 @@
 # Why this fork?
 
+![how evince looks without the menu bar](no-menu-bar.png)
+
 The selling point of Evince for me is the previewing functionality.  You can
 hover over any reference in a PDF and it will preview what is going on at the
 referenced part.  I don't know any other PDF viewer that has that feature.
