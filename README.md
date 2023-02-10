@@ -14,17 +14,17 @@ So my goal with this fork is to make Evince behave more like Zathura.
 That is why this fork has the following changes to upstream:
 
 - The menu bar (or toolbar) can be hidden via a keyboard shortcut. This is
-  `ALT-m` or F12 by default. [main and keyboard]
-- Hide the menu bar by default. [only keyboard]
+  `ALT-m` or F12 by default. [main and keyboard branches]
+- Hide the menu bar by initially. [only keyboard branch]
 - Some keyboard shortcuts are added/modified/removed. Examples are `J` and `K`
-  for page up/down, or `CTRL+o` for going back in history. [only keyboard]
+  for page up/down, or `CTRL+o` for going back in history. [only keyboard branch]
 
 All branches can be configured to your liking. Modifications to keyboard
-shortcuts can be done in the `shell/ev-application.c`. Check the diff to
+shortcuts can be done in the file `shell/ev-application.c`. Check the diff to
 upstream if you are lost.
 
-You can expect me to rebase on upstream when there is a new release, at least as
-long as no other PDF viewer has the above mentioned feature.
+You can expect me to rebase on upstream when there is a new release of Evince,
+at least as long as no other PDF viewer has the above mentioned feature.
 
 ## Hiding the menu bar by default
 
@@ -41,12 +41,14 @@ this is based on the assumption that your libraries and other files of evince
 should already be up to date. I'm not sure if this assumption breaks with
 non-rolling-release distributions. If so check how you can install the compiled
 files. I guess that should not be to hard.
-``sh
+```sh
 git clone https://github.com/fabian-thomas/cleaner-evince
 meson setup --prefix /usr build
 meson compile -C build
 sudo cp build/shell/evince "$(which evince)"
-``
+```
+
+# The following part is the upstream readme
 
 # ![evince-logo] Evince
 
