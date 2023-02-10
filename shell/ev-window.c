@@ -656,6 +656,18 @@ ev_window_update_actions_sensitivity (EvWindow *ev_window)
 }
 
 static void
+ev_window_cmd_action_menubar (GSimpleAction *action,
+			   GVariant      *parameter,
+			   gpointer       user_data)
+{
+	EvWindow *ev_window = user_data;
+	EvWindowPrivate *priv = GET_PRIVATE (ev_window);
+
+	GtkWidget* menubar_widget = GTK_WIDGET(ev_toolbar_get_header_bar (EV_TOOLBAR (priv->toolbar)));
+	gtk_widget_set_visible(menubar_widget, !gtk_widget_get_visible(menubar_widget));
+}
+
+static void
 set_widget_visibility (GtkWidget *widget, gboolean visible)
 {
 	g_assert (GTK_IS_WIDGET (widget));
@@ -6428,6 +6440,7 @@ static const GActionEntry actions[] = {
 	{ "default-zoom", ev_window_cmd_set_default_zoom },
 	{ "escape", ev_window_cmd_escape },
 	{ "toggle-menu", ev_window_cmd_action_menu },
+	{ "toggle-menubar", ev_window_cmd_action_menubar },
 	{ "caret-navigation", NULL, NULL, "false", ev_window_cmd_view_toggle_caret_navigation },
 	{ "add-annotation", NULL, NULL, "false", ev_window_cmd_add_annotation },
 	{ "highlight-annotation", NULL, NULL, "false", ev_window_cmd_add_highlight_annotation },

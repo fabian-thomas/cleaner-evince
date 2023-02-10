@@ -971,6 +971,7 @@ ev_application_startup (GApplication *gapplication)
           "win.sizing-mode::automatic", "a", NULL,
           "win.default-zoom",           "<Ctrl>0", "<Ctrl>KP_0", NULL,
           "win.toggle-menu",            "F10", NULL,
+          "win.toggle-menubar",         "<alt>m", "F12", NULL,
           "win.caret-navigation",       "F7", NULL,
           "win.zoom-in",                "plus", "<Ctrl>plus", "KP_Add", "<Ctrl>KP_Add", "equal", "<Ctrl>equal", NULL,
           "win.zoom-out",               "minus", "<Ctrl>minus", "KP_Subtract", "<Ctrl>KP_Subtract", NULL,
